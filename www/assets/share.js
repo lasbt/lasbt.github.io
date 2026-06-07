@@ -1,6 +1,6 @@
 const CONFIG = {
     title: 'Luis Antonio',
-    url: 'https://abacate.codeberg.page',
+    url: 'https://lasbt.github.io',
     // Random phrases for sharing the profile
     phrases: [
         'Take a look at this awesome page:',

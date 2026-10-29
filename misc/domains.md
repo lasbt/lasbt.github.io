@@ -1,8 +1,7 @@
 # Domains
 
-zaorinu.github.io
-  - primary landing
-  - profile redirect
+lasbt.github.io
+  - personal site and primary landing page
 
 zaorinu.is-a.dev
   - public email domain

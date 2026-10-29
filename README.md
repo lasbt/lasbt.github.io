@@ -1,7 +1,4 @@
-<!--
-Web readme at <github.com> 
-- Find me on web: lasbt.github.io / zaorinu.is-a.dev
--->
-Welcome to Luis' website repository!
+<!-- Personal site: https://lasbt.github.io -->
+Welcome to Luis' personal website repository!
 
-[domains](misc/domains.md) ‧ [share my profile](https://lasbt.github.io/share)
+[Website](https://lasbt.github.io) · [Blog](https://zunalita.github.io/user/luis) · [GitHub](https://github.com/lasbt) · [Email](mailto:luapersons@gmail.com)

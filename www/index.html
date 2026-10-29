@@ -1,32 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:;">
-    <meta http-equiv="refresh" content="0;url=https://github.com/lasbt">
-    <title>Luis' Space!</title>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luis is a developer who sees technology as a force for freedom, collaboration, and progress.">
+  <meta name="theme-color" content="#f4d45b">
+  <link rel="canonical" href="https://lasbt.github.io/">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>Luis' website'</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="story-stage" id="story-stage" aria-label="About Luis">
+      <div class="story-stage__sticky" id="story-sticky">
+        <div class="wave-field" id="wave-field" aria-hidden="true">
+          <svg viewBox="0 0 1440 500" preserveAspectRatio="none" focusable="false">
+            <path class="wave-line" d="M0 290C120 200 240 200 360 290S600 380 720 290 960 200 1080 290 1320 380 1440 290"></path>
+          </svg>
+        </div>
+        <div class="site-shell story-layout">
+          <div class="story-copy">
+            <p class="story-intro">Hi, I'm Luis.</p>
+            <h1 class="story-heading" id="story-heading">
+              <span class="story-heading__visual" id="story-visual" aria-hidden="true">I build with purpose.</span><span class="typing-cursor" aria-hidden="true"></span>
+              <span class="visually-hidden" id="story-accessible-text" aria-live="polite" aria-atomic="true">I build with purpose.</span>
+            </h1>
+            <p class="story-description" id="story-description">I see technology as a force for freedom, collaboration, and progress.</p>
+            <a class="story-cta" id="story-cta" href="#work">
+              <span id="story-cta-label">Explore my work</span>
+              <span class="story-cta__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="story-secondary" href="https://github.com/lasbt" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>
+              <span>GitHub profile</span>
+            </a>
+          </div>
+        </div>
+        <div class="giraffe-reveal" id="giraffe-reveal" aria-hidden="true">
+          <img src="assets/images/giraffe.png" alt="" width="1200" height="1200">
+        </div>
+      </div>
+    </section>
 
-  <body>
-    <!-- Fallback for enabled JavaScript -->
-    <p id="fallback" style="display:none;">
-      The redirect didn't happen.
-      <a href="https://github.com/lasbt">Click here</a>.
-    </p>
+    <section class="work-section site-shell" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="work-title">Recent projects</h2>
+        </div>
+        <a class="all-projects-link" href="https://github.com/lasbt?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="project-grid" id="project-list" aria-live="polite" aria-busy="true">
+        <p class="project-status" role="status">Loading recent projects...</p>
+      </div>
+    </section>
+    <div class="giraffe-continuation" id="giraffe-continuation" aria-hidden="true">
+      <img src="assets/images/giraffe-leg.svg" alt="">
+    </div>
+  </main>
+  <footer class="site-footer-art">
+    <img src="assets/images/savanna-footer.svg" alt="Silhouette of a savanna with trees and wildlife" width="1440" height="240" loading="lazy">
+  </footer>
 
-    <!-- Fallback for disabled JavaScript -->
-    <noscript>
-      <p id="noscript-fallback">
-        JavaScript is disabled.
-        <a href="https://github.com/lasbt">Click here to continue</a>.
-      </p>
-    </noscript>
-
-    <script>
-      // Display advise only after 5 seconds (tipically, if it didn't redirect)
-      setTimeout(() => {
-        document.getElementById("fallback").style.display = "block";
-      }, 5000);
-    </script>
-  </body>
+  <script src="assets/js/story.js" defer></script>
+  <script src="assets/js/projects.js" defer></script>
+</body>
 </html>

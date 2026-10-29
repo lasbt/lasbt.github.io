@@ -16,7 +16,6 @@
     "license": {
       "spdx_id": "MIT"
     },
-    "default_branch": "main",
     "image_url": null
   },
   {
@@ -33,7 +32,6 @@
     "license": {
       "spdx_id": "MIT"
     },
-    "default_branch": "main",
     "image_url": null
   },
   {
@@ -50,7 +48,6 @@
     "license": {
       "spdx_id": "MIT"
     },
-    "default_branch": "main",
     "image_url": null
   }
 ]

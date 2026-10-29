@@ -68,12 +68,11 @@ const snapshot = await Promise.all(topRepositories.map(async (repository) => ({
   open_issues_count: repository.open_issues_count,
   updated_at: repository.updated_at,
   license: repository.license ? { spdx_id: repository.license.spdx_id } : null,
-  default_branch: repository.default_branch,
   image_url: await findImage(repository)
 })));
 
 await writeFile(
-  new URL("../www/assets/projects-data.json", import.meta.url),
+  new URL("../www/assets/data/projects.json", import.meta.url),
   `${JSON.stringify(snapshot, null, 2)}\n`
 );
 

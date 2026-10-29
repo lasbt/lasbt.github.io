@@ -53,6 +53,7 @@ function makeProjectCard(repository, index) {
   const description = document.createElement("p");
   description.className = "project-card__description";
   description.textContent = repository.description || "An ongoing project from my GitHub profile.";
+  body.append(header, description);
 
   if (repository.topics?.length) {
     const topics = document.createElement("div");
@@ -63,7 +64,7 @@ function makeProjectCard(repository, index) {
       tag.textContent = topic;
       topics.append(tag);
     });
-    body.append(header, description, topics);
+    body.append(topics);
   }
 
   const details = document.createElement("div");
@@ -116,7 +117,6 @@ function makeProjectCard(repository, index) {
   }).format(new Date(repository.updated_at))}`;
   footer.append(updated);
 
-  if (!repository.topics?.length) body.append(header, description);
   body.append(details, footer);
   card.append(body);
   return card;
@@ -190,7 +190,7 @@ async function fetchLiveProjects() {
 
 async function loadProjectData() {
   try {
-    const response = await fetch("assets/projects-data.json", { cache: "no-store" });
+    const response = await fetch("assets/data/projects.json", { cache: "no-store" });
     if (response.ok) {
       const repositories = await response.json();
       if (Array.isArray(repositories)) return { repositories, useLiveImages: false };

@@ -21,6 +21,7 @@ const storyDescription = document.getElementById("story-description");
 const storyCta = document.getElementById("story-cta");
 const storyCtaLabel = document.getElementById("story-cta-label");
 const giraffeReveal = document.getElementById("giraffe-reveal");
+const giraffeContinuation = document.getElementById("giraffe-continuation");
 const waveField = document.getElementById("wave-field");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let showingWriting = false;
@@ -64,10 +65,10 @@ function setStoryPhase(isWriting) {
   const version = ++animationVersion;
   const content = isWriting ? STORY.writing : STORY.build;
 
-  storySticky.classList.toggle("is-writing", isWriting);
   if (!isWriting) {
     waveField.classList.remove("is-visible");
     giraffeReveal.classList.remove("is-visible");
+    giraffeContinuation.classList.remove("is-visible");
   }
   storyDescription.textContent = content.description;
   storyAccessibleText.textContent = content.phrase;
@@ -91,6 +92,7 @@ function setStoryPhase(isWriting) {
     if (version !== animationVersion) return;
 
     giraffeReveal.classList.add("is-visible");
+    giraffeContinuation.classList.add("is-visible");
     await wait(prefersReducedMotion.matches ? 0 : 700);
     if (version === animationVersion) completeStoryScroll();
   });
@@ -119,8 +121,16 @@ function requestStoryUpdate() {
   window.requestAnimationFrame(updateStoryFromScroll);
 }
 
+function positionGiraffeContinuation() {
+  giraffeContinuation.style.top = `${storyStage.offsetTop + storyStage.offsetHeight}px`;
+}
+
 storyVisual.textContent = "";
+positionGiraffeContinuation();
 animatePhrase(STORY.build.phrase, animationVersion);
 window.addEventListener("scroll", requestStoryUpdate, { passive: true });
-window.addEventListener("resize", requestStoryUpdate);
+window.addEventListener("resize", () => {
+  positionGiraffeContinuation();
+  requestStoryUpdate();
+});
 window.addEventListener("pageshow", requestStoryUpdate);

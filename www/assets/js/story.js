@@ -85,7 +85,14 @@ function setStoryPhase(isWriting) {
   }
 
   animatePhrase(content.phrase, version).then(async () => {
-    if (!isWriting || version !== animationVersion) return;
+    if (version !== animationVersion) return;
+    if (!isWriting) {
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion.matches ? "auto" : "smooth"
+      });
+      return;
+    }
 
     waveField.classList.add("is-visible");
     await wait(prefersReducedMotion.matches ? 0 : 450);

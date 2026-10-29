@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-# Adapted for https://zaorinu.github.io (including "zaorinu.is-a.dev")
+# Deploys the personal site at https://lasbt.github.io
 name: Deploy static content to Pages
 
 on:
@@ -8,6 +8,10 @@ on:
     branches: ["main"]
     paths:
       - "www/**" # Changes only on www folder, where website content is hosted and distributed to anyone
+      - "scripts/**"
+
+  schedule:
+    - cron: "23 6 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,9 +42,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload CNAME to folder
-        run: |
-          echo "zaorinu.is-a.dev" > www/CNAME
+      - name: Generate project snapshot
+        run: node scripts/generate-projects.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

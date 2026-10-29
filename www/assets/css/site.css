@@ -150,7 +150,7 @@ a:focus-visible {
   right: clamp(-70px, -3vw, -24px);
   bottom: 0;
   width: clamp(300px, 36vw, 440px);
-  aspect-ratio: 1.85;
+  aspect-ratio: 1.25;
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
